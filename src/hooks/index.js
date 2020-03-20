@@ -4,6 +4,7 @@ import { collatedTasksExist } from "../helpers";
 import moment from "moment";
 
 export const useTasks = selectedProject => {
+  console.log("initialselected", selectedProject);
   const [tasks, setTasks] = useState([]);
   const [archivedTasks, setArchivedTasks] = useState([]);
 
@@ -18,12 +19,12 @@ export const useTasks = selectedProject => {
         ? (unsubscribe = unsubscribe.where("projectId", "==", selectedProject))
         : selectedProject === "TODAY"
         ? (unsubscribe = unsubscribe.where(
-            "data",
+            "date",
             "==",
             moment().format("DD/MM/YYYY")
           ))
         : selectedProject === "INBOX" || selectedProject === 0
-        ? (unsubscribe = unsubscribe.where("data", "==", ""))
+        ? (unsubscribe = unsubscribe.where("date", "==", ""))
         : unsubscribe;
 
     unsubscribe = unsubscribe.onSnapshot(snapshot => {

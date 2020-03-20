@@ -14,7 +14,7 @@ export const Checkbox = ({ id }) => {
 
   return (
     <div
-      className="checkbox-handler"
+      className="checkbox-holder"
       data-testid="checkbox-action"
       onClick={() => archiveTask()}
     >
