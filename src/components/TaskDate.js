@@ -22,7 +22,7 @@ export const ProjectOverlay = ({
                 setShowProjectOverlay(false);
               }}
             >
-              {}
+              {project.name}
             </li>
           ))}
         </ul>

@@ -3,6 +3,7 @@ import { FaRegListAlt, FaRegCalendarAlt } from "react-icons/fa";
 import moment from "moment";
 import { firebase } from "../firebase";
 import { useSelectedProjectValue } from "../context";
+import { ProjectOverlay } from "./ProjectOverlay";
 
 export const AddTask = ({
   showAddTaskMain = true,
@@ -14,8 +15,8 @@ export const AddTask = ({
   const [taskDate, setTaskDate] = useState("");
   const [project, setProject] = useState("");
   const [showMain, setShowMain] = useState(shouldShowMain);
-  const [showProjectOverlay, setshowProjectOverlay] = useState(false);
-  const [showTaskDate, setshowTaskDate] = useState(false);
+  const [showProjectOverlay, setShowProjectOverlay] = useState(false);
+  const [showTaskDate, setShowTaskDate] = useState(false);
 
   const { selectedProject } = useSelectedProjectValue();
 
@@ -47,7 +48,7 @@ export const AddTask = ({
           setTask("");
           setProject("");
           setShowMain("");
-          setshowProjectOverlay(false);
+          setShowProjectOverlay(false);
         })
     );
   };
@@ -79,7 +80,7 @@ export const AddTask = ({
                   data-testid="add-task-quick-cancel"
                   onClick={() => {
                     setShowMain(false);
-                    setshowProjectOverlay(false);
+                    setShowProjectOverlay(false);
                     setShowQuickAddTask(false);
                   }}
                 >
@@ -88,7 +89,11 @@ export const AddTask = ({
               </div>
             </>
           )}
-          <p>Project Overlay Here</p>
+          <ProjectOverlay
+            setProject={setProject}
+            showProjectOverlay={showProjectOverlay}
+            setShowProjectOverlay={setShowProjectOverlay}
+          />
           <p>TaskDate Here</p>
           <input
             className="add-task__content"
@@ -111,7 +116,7 @@ export const AddTask = ({
               data-testid="add-task-main-cancel"
               onClick={() => {
                 setShowMain(false);
-                setshowProjectOverlay(false);
+                setShowProjectOverlay(false);
               }}
             >
               Cancel
@@ -120,14 +125,14 @@ export const AddTask = ({
           <span
             className="add-task__project"
             data-testid="show-project-overlay"
-            onClick={() => setshowProjectOverlay(!showProjectOverlay)}
+            onClick={() => setShowProjectOverlay(!showProjectOverlay)}
           >
             <FaRegListAlt />
           </span>
           <span
             className="add-task__date"
             data-testid="show-task-date-overlay"
-            onClick={() => setshowTaskDate(!showTaskDate)}
+            onClick={() => setShowTaskDate(!showTaskDate)}
           >
             <FaRegCalendarAlt />
           </span>
