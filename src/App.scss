@@ -135,11 +135,87 @@ $generic-bg: #db4c3f;
 /* Darkmode
   ============================================ */
 .darkmode {
+  &.app {
+    background-color: #564e58;
+  }
+
   header {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
-    background-color: #282828;
+    background-color: #564e58;
     border-color: transparent;
+  }
+
+  .sidebar {
+    background-color: #6b7d7d;
+    color: white;
+
+    li {
+      color: white;
+
+      &.active {
+        background-color: #a4a5ae !important;
+      }
+    }
+
+    li:hover {
+      background-color: #a4a5ae !important;
+    }
+
+    .sidebar__middle h2 {
+      color: white !important;
+    }
+
+    .add-project__text {
+      color: white !important;
+    }
+
+    .add-project__cancel {
+      color: white !important;
+    }
+  }
+
+  .tasks {
+    background-color: #a4a5ae;
+    color: white;
+
+    li {
+      color: white;
+    }
+
+    .add-task__text {
+      color: white !important;
+    }
+
+    .add-task__cancel {
+      color: white !important;
+    }
+
+    .add-task__project {
+      color: white !important;
+    }
+
+    .add-task__date {
+      color: white !important;
+    }
+
+    .task-date {
+      background-color: #6b7d7d;
+      color: white !important;
+    }
+
+    .task-date li:hover {
+      background-color: #798086;
+    }
+
+    .project-overlay {
+      background-color: #6b7d7d;
+      color: white !important;
+    }
+
+    .project-overlay li:hover {
+      background-color: #798086;
+    }
   }
 }
 
@@ -431,7 +507,8 @@ header {
     width: 200px;
     padding: 10px;
     top: 10px;
-    right: 0;
+    position: relative;
+    // right: 200px;
     background-color: white;
 
     p {

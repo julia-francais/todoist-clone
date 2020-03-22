@@ -21,9 +21,7 @@ export const AddTask = ({
 
   const { selectedProject } = useSelectedProjectValue();
 
-  const AddTask = () => {
-    console.log("tD", taskDate);
-
+  const addTask = () => {
     const projectId = project || selectedProject;
     let collatedDate = "";
 
@@ -113,7 +111,11 @@ export const AddTask = ({
             type="button"
             className="add-task__submit"
             data-testid="add-task"
-            onClick={() => AddTask()}
+            onClick={() =>
+              showQuickAddTask
+                ? addTask() && setShowQuickAddTask(false)
+                : addTask()
+            }
           >
             Add Task
           </button>
