@@ -19,7 +19,7 @@ export const Tasks = () => {
   }
 
   if (
-    projects &&
+    // projects &&
     projects.length > 0 &&
     selectedProject &&
     !collatedTasksExist(selectedProject)

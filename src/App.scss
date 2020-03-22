@@ -19,7 +19,6 @@ body {
   font-family: "Roboto", sans-serif;
   color: #202020;
   background-color: #fafafa;
-  font-smooth: always;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -306,8 +305,6 @@ header {
               @include transparent-button();
               color: white;
               cursor: pointer;
-              display: -webkit-box;
-              display: -ms-flexbox;
               display: flex;
 
               svg {
@@ -341,8 +338,6 @@ header {
 
   li {
     &:hover .sidebar__project-delete {
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
     }
   }
@@ -355,11 +350,7 @@ header {
       padding-left: 10px;
       padding-right: 15px;
       width: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
     }
 
@@ -451,32 +442,25 @@ header {
     li {
       list-style-type: none;
       color: #333;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       cursor: pointer;
       line-height: 1.5;
       font-size: 15px;
-      padding: 10px 0 10px 10px;
+      padding-left: 0;
+      padding-right: 0;
 
       span {
         margin-right: 10px;
       }
 
       div:nth-child(1) {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         padding: 10px 0 10px 10px;
         width: 100%;
 
         span:first-of-type {
           margin-right: 10px;
-          display: -webkit-box;
-          display: -ms-flexbox;
           display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
           align-items: center;
 
           svg {
@@ -732,21 +716,18 @@ header {
     @include task-item();
     padding: 0;
 
-    //     div:nth-child(1) {
-    //       padding: 10px;
-    //       width: 100%;
-    //       display: -webkit-box;
-    //       display: -ms-flexbox;
-    //       display: flex;
-    //       -webkit-box-align: center;
-    //       -ms-flex-align: center;
-    //       align-items: center;
+    div:nth-child(1) {
+      padding: 10px;
+      width: 100%;
+      display: flex;
+      align-items: center;
 
-    span:first-of-type {
-      margin-right: 10px;
+      span:first-of-type {
+        margin-right: 10px;
 
-      svg {
-        fill: grey;
+        svg {
+          fill: grey;
+        }
       }
     }
   }
@@ -767,10 +748,10 @@ header {
     @include task-item();
     padding: 0;
 
-    //     div:nth-child(1) {
-    //       width: 100%;
-    //       padding: 10px;
-    //     }
+    div:nth-child(1) {
+      width: 100%;
+      padding: 10px;
+    }
   }
 }
 

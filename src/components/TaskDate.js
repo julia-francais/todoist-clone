@@ -13,26 +13,50 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
           }}
           data-testid="task-date-overlay"
         >
-          <span>
-            <FaSpaceShuttle />
-          </span>
-          <span>Today</span>
+          <div
+            onClick={() => {
+              setShowTaskDate(false);
+              setTaskDate(moment().format("DD/MM/YYYY"));
+            }}
+            onKeyDown={() => {
+              setShowTaskDate(false);
+              setTaskDate(moment().format("DD/MM/YYYY"));
+            }}
+            tabIndex={0}
+            role="button"
+          >
+            <span>
+              <FaSpaceShuttle />
+            </span>
+            <span>Today</span>
+          </div>
         </li>
-        <li
-          onClick={() => {
-            setShowTaskDate(false);
-            setTaskDate(
-              moment()
-                .add(7, "days")
-                .format("DD/MM/YYYY")
-            );
-          }}
-          data-testid="task-date-next-week"
-        >
-          <span>
-            <FaRegPaperPlane />
-          </span>
-          <span>Next week</span>
+        <li data-testid="task-date-next-week">
+          <div
+            onClick={() => {
+              setShowTaskDate(false);
+              setTaskDate(
+                moment()
+                  .add(7, "days")
+                  .format("DD/MM/YYYY")
+              );
+            }}
+            onKeyDown={() => {
+              setShowTaskDate(false);
+              setTaskDate(
+                moment()
+                  .add(7, "days")
+                  .format("DD/MM/YYYY")
+              );
+            }}
+            tabIndex={0}
+            role="button"
+          >
+            <span>
+              <FaRegPaperPlane />
+            </span>
+            <span>Next week</span>
+          </div>
         </li>
       </ul>
     </div>
