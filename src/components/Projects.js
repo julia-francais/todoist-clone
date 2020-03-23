@@ -12,8 +12,7 @@ export const Projects = ({ activeValue = true }) => {
     projects.map(project => (
       <li
         key={project.projectId}
-        data-doc-id={project.docId}
-        data-testid="project-action"
+        data-testid="project-action-parent"
         className={
           active === project.projectId
             ? "active sidebar__project"
@@ -21,6 +20,8 @@ export const Projects = ({ activeValue = true }) => {
         }
       >
         <div
+          data-testid="project-action"
+          data-doc-id={project.docId}
           role="button"
           tabIndex={0}
           arial-label={`Select ${project.name} as the task project`}
