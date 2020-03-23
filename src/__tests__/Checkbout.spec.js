@@ -24,5 +24,13 @@ describe("<Checkbox />", () => {
       );
       expect(queryByTestId("checkbox-action")).toBeTruthy();
     });
+
+    it("renders the task checkbox and accepts a click", () => {
+      const { queryByTestId, debug } = render(
+        <Checkbox id="1" taskDesc="Finish this tutorial series" />
+      );
+      expect(queryByTestId("checkbox-action")).toBeTruthy();
+      fireEvent.click(queryByTestId("checkbox-action"));
+    });
   });
 });

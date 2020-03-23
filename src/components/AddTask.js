@@ -138,7 +138,6 @@ export const AddTask = ({
                 ? addTask() && setShowQuickAddTask(false)
                 : addTask()
             }
-            role="button"
             tabIndex={0}
           >
             Add Task
@@ -155,7 +154,6 @@ export const AddTask = ({
                 setShowMain(false);
                 setShowProjectOverlay(false);
               }}
-              role="button"
               tabIndex={0}
             >
               Cancel

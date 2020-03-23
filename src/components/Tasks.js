@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Checkbox } from "./Checkbox";
 import { AddTask } from "./AddTask";
 import { useTasks } from "../hooks";
