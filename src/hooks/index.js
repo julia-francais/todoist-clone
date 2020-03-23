@@ -4,7 +4,7 @@ import { collatedTasksExist } from "../helpers";
 import moment from "moment";
 
 export const useTasks = selectedProject => {
-  console.log("initialselected", selectedProject);
+  // console.log("initialselected", selectedProject);
   const [tasks, setTasks] = useState([]);
   const [archivedTasks, setArchivedTasks] = useState([]);
 
