@@ -6,14 +6,9 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
   showTaskDate && (
     <div className="task-date" data-testid="task-date-overlay">
       <ul className="task-date__list">
-        <li
-          onClick={() => {
-            setShowTaskDate(false);
-            setTaskDate(moment().format("DD/MM/YYYY"));
-          }}
-          data-testid="task-date-overlay"
-        >
+        <li>
           <div
+            data-testid="task-date-today"
             onClick={() => {
               setShowTaskDate(false);
               setTaskDate(moment().format("DD/MM/YYYY"));
@@ -32,8 +27,9 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
             <span>Today</span>
           </div>
         </li>
-        <li data-testid="task-date-next-week">
+        <li>
           <div
+            data-testid="task-date-next-week"
             onClick={() => {
               setShowTaskDate(false);
               setTaskDate(

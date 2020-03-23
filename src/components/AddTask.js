@@ -119,9 +119,6 @@ export const AddTask = ({
             type="text"
             value={task}
             onChange={e => setTask(e.target.value)}
-            onKeyPress={e => setTask(e.target.value)}
-            role="button"
-            tabIndex={0}
           />
           <button
             type="button"
@@ -129,11 +126,6 @@ export const AddTask = ({
             className="add-task__submit"
             data-testid="add-task"
             onClick={() =>
-              showQuickAddTask
-                ? addTask() && setShowQuickAddTask(false)
-                : addTask()
-            }
-            onKeyDown={() =>
               showQuickAddTask
                 ? addTask() && setShowQuickAddTask(false)
                 : addTask()
