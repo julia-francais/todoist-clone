@@ -23,6 +23,7 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
               setTaskDate(moment().format("DD/MM/YYYY"));
             }}
             tabIndex={0}
+            arial-label="Select today as the task date"
             role="button"
           >
             <span>
@@ -49,6 +50,7 @@ export const TaskDate = ({ setTaskDate, showTaskDate, setShowTaskDate }) =>
                   .format("DD/MM/YYYY")
               );
             }}
+            arial-label="Select next week as the task date"
             tabIndex={0}
             role="button"
           >

@@ -22,6 +22,7 @@ export const Sidebar = () => {
           className={active === "inbox" ? "active" : undefined}
         >
           <div
+            arial-label=" Show inbox tasks"
             onClick={() => {
               setActive("inbox");
               setSelectedProject("INBOX");
@@ -44,6 +45,7 @@ export const Sidebar = () => {
           className={active === "today" ? "active" : undefined}
         >
           <div
+            arial-label=" Show today's tasks"
             onClick={() => {
               setActive("today");
               setSelectedProject("TODAY");
@@ -66,6 +68,7 @@ export const Sidebar = () => {
           className={active === "next_7" ? "active" : undefined}
         >
           <div
+            arial-label=" Show next seven days tasks"
             onClick={() => {
               setActive("next_7");
               setSelectedProject("NEXT_7");
@@ -85,6 +88,7 @@ export const Sidebar = () => {
         </li>
       </ul>
       <div
+        arial-label=" Show hide projects"
         className="sidebar__middle"
         onClick={() => setShowProjects(!showProjects)}
         onKeyDown={() => setShowProjects(!showProjects)}

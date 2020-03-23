@@ -61,6 +61,7 @@ export const AddTask = ({
     >
       {showAddTaskMain && (
         <div
+          arial-label=" Add task"
           className="add-task__shallow"
           data-testid="show-main-action"
           onClick={() => setShowMain(!showMain)}
@@ -81,6 +82,7 @@ export const AddTask = ({
                 <h2 className="header">Quick Add Task</h2>
                 <span
                   className="add-task__cancel-x"
+                  arial-label=" Cancel adding task"
                   data-testid="add-task-quick-cancel"
                   onClick={() => {
                     setShowMain(false);
@@ -111,6 +113,7 @@ export const AddTask = ({
             setShowTaskDate={setShowTaskDate}
           />
           <input
+            arial-label=" Enter your Task"
             className="add-task__content"
             data-testid="add-task-content"
             type="text"
@@ -122,6 +125,7 @@ export const AddTask = ({
           />
           <button
             type="button"
+            arial-label=" Submit your entered task"
             className="add-task__submit"
             data-testid="add-task"
             onClick={() =>

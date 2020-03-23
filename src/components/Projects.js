@@ -23,6 +23,7 @@ export const Projects = ({ activeValue = true }) => {
         <div
           role="button"
           tabIndex={0}
+          arial-label={`Select ${project.name} as the task project`}
           onClick={() => {
             setActive(project.projectId);
             setSelectedProject(project.projectId);
