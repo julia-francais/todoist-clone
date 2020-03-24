@@ -22,6 +22,7 @@ export const Sidebar = () => {
           className={active === "inbox" ? "active" : undefined}
         >
           <div
+            data-testid="inbox-action"
             arial-label=" Show inbox tasks"
             onClick={() => {
               setActive("inbox");
@@ -45,6 +46,7 @@ export const Sidebar = () => {
           className={active === "today" ? "active" : undefined}
         >
           <div
+            data-testid="today-action"
             arial-label=" Show today's tasks"
             onClick={() => {
               setActive("today");
@@ -68,6 +70,7 @@ export const Sidebar = () => {
           className={active === "next_7" ? "active" : undefined}
         >
           <div
+            data-testid="next_7-action"
             arial-label=" Show next seven days tasks"
             onClick={() => {
               setActive("next_7");
