@@ -332,8 +332,14 @@ header {
   border-right: $generic-border;
   background-color: #fafafa;
 
-  @include mq("900px") {
-    display: none;
+  @include mq("768px") {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    .add-project__input {
+      display: block;
+    }
   }
 
   li {
@@ -481,16 +487,17 @@ header {
 /* Show Confirm Delete
   ============================================ */
 .project-delete-modal {
-  position: relative;
+  position: absolute;
 
   &__inner {
     @include box-overlay();
+    flex-direction: column;
     z-index: 99;
-    width: 200px;
+    width: 200px !important;
     padding: 10px;
     top: 10px;
-    position: relative;
-    // right: 200px;
+    position: relative !important;
+    right: 200px;
     background-color: white;
 
     p {
