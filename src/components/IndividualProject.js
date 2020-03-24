@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import PropTypes from "prop-types";
 import { useProjectsValue, useSelectedProjectValue } from "../context";
 import { firebase } from "../firebase";
 
@@ -15,6 +16,7 @@ export const IndividualProject = ({ project }) => {
       .doc(docId)
       .delete()
       .then(() => {
+        console.log(typeof setProjects);
         setProjects([...projects]);
         setSelectedProject("INBOX");
       });
@@ -25,13 +27,13 @@ export const IndividualProject = ({ project }) => {
       <span className="sidebar__dot">•</span>
       <span className="sidebar__project-name">{project.name}</span>
       <span
-        arial-label=" Confirm deletion of project"
         className="sidebar__project-delete"
         data-testid="delete-project"
         onClick={() => setShowConfirm(!showConfirm)}
         onKeyDown={() => setShowConfirm(!showConfirm)}
-        role="button"
         tabIndex={0}
+        role="button"
+        aria-label="Confirm deletion of project"
       >
         <FaTrashAlt />
         {showConfirm && (
@@ -41,18 +43,19 @@ export const IndividualProject = ({ project }) => {
               <button
                 type="button"
                 onClick={() => deleteProject(project.docId)}
+                data-testid="confirm-delete-project"
               >
                 Delete
-                <span
-                  onClick={() => setShowConfirm(!showConfirm)}
-                  onKeyDown={() => setShowConfirm(!showConfirm)}
-                  role="button"
-                  tabIndex={0}
-                  arial-label=" Cancel deletion of project"
-                >
-                  Cancel
-                </span>
               </button>
+              <span
+                onClick={() => setShowConfirm(!showConfirm)}
+                onKeyDown={() => setShowConfirm(!showConfirm)}
+                tabIndex={0}
+                role="button"
+                aria-label="Cancel adding project, do not delete"
+              >
+                Cancel
+              </span>
             </div>
           </div>
         )}
