@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { generatePushId } from "../helpers";
 import { firebase } from "../firebase";
 import { useProjectsValue } from "../context";
@@ -74,4 +75,8 @@ export const AddProject = ({ shouldShow = false }) => {
       </span>
     </div>
   );
+};
+
+AddProject.propTypes = {
+  shouldShow: PropTypes.bool
 };
